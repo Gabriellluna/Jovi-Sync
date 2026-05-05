@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "Robotic";
+    src: url(./fonts/Goldman-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Default";
+    src: url(./fonts/Michroma-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Default';
+}
+
+ul, ol{
+    list-style: none;
+}
+
+:root{
+    --white: #FFFFFF;
+    --primary-color-header: #ebd5e9;
+    --secondary-color-header: #f2d5d2;
+    --dark-red: #661818;
+    --light-red: #bb3c3c;
+    --grey: #83868a41;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+section{
+    height: 100dvh;
+    background-color: aqua;
+}
+
+.navigator{
+    width: 100%;
+    background-color: #e8e9e8;
+    display: flex;
+    align-items: center;
+    img{
+        max-height: 100px;
+    }
+    ul{
+        display: flex;
+        padding: 15px 20px;
+        background: linear-gradient(to right, var(--white) 0%, var(--secondary-color-header) 50%, var(--white) 100%);
+        margin: 0 300px;
+        border-radius: 50px;
+        gap: 15px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+        li{
+            padding: 5px 60px;
+        }
+    }
+}
+
+.banner-header{
+    height: calc(100dvh - 100px);
+    background-image: url('./images/banner.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner-products{
+    height: 100dvh;
+    width: 100%;
+    background-image: url('./images/banner2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 65px;
+    h3{
+        font-family: "Robotic";
+        color: var(--light-red);
+    }
+    p{
+        color: var(--dark-red);
+        width: 60%;
+        font-size: 20px;
+    }
+    h1{
+        font-size: 70px;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.text-content{
+    max-width: 50%;
+    
+}
+
+.icon-bg{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 10px;
+    max-height: 40px;
+    max-width: 40px;
+}
+
+.text-card{
+    width: 70%;
+    background-color: var(--grey);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border: 2px solid var(--white);
+    border-radius: 20px 0px 20px 0px;
+    margin: 15px;
+}
+
+.text-card-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.text-card-content span:last-child{
+    color: var(--dark-red);
+}
