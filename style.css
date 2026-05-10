@@ -21,7 +21,6 @@ ul, ol{
 
 :root{
     --white: #FFFFFF;
-    --primary-color-header: #ebd5e9;
     --secondary-color-header: #f2d5d2;
     --dark-red: #661818;
     --light-red: #bb3c3c;
@@ -68,12 +67,10 @@ section{
 
 .banner-products{
     height: 100dvh;
-    width: 100%;
     background-image: url('./images/banner2.png');
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: flex-start;
     flex-direction: column;
     padding: 65px;
     h3{
@@ -93,7 +90,6 @@ section{
 
 .text-content{
     max-width: 50%;
-    
 }
 
 .icon-bg{
@@ -126,4 +122,202 @@ section{
 
 .text-card-content span:last-child{
     color: var(--dark-red);
+}
+
+.pilares-section {
+    display: flex;
+    height: 100dvh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pilar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.pilar:last-child {
+    border-right: none;
+}
+
+.pilar-1, #overlay-1 { background-image: url('./images/pilar-1.jpg'); }
+.pilar-2, #overlay-2 { background-image: url('./images/pilar-2.jpg'); }
+.pilar-3, #overlay-3 { background-image: url('./images/pilar-3.jpg'); }
+
+.pilar-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    padding: 40px;
+}
+
+.pilar-number {
+    font-family: "Robotic";
+    font-size: 150px;
+    color: #1a1a1a;
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+.pilar-title {
+    font-size: 20px;
+    color: #1a1a1a;
+    font-weight: normal;
+}
+
+.pilar-subtitle {
+    font-size: 13px;
+    color: #555;
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 14px 48px;
+    border-radius: 50px;
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #3a3a3a;
+}
+
+@keyframes expand-from-left {
+    from { clip-path: inset(0 66.66% 0 0); opacity: 0; }
+    to   { clip-path: inset(0 0% 0 0);     opacity: 1; }
+}
+
+@keyframes expand-from-center {
+    from { clip-path: inset(0 33.33% 0 33.33%); opacity: 0; }
+    to   { clip-path: inset(0 0% 0 0%);          opacity: 1; }
+}
+
+@keyframes expand-from-right {
+    from { clip-path: inset(0 0 0 66.66%); opacity: 0; }
+    to   { clip-path: inset(0 0 0 0%);     opacity: 1; }
+}
+
+.pilar-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+
+.pilar-overlay:target {
+    pointer-events: all;
+}
+
+#overlay-1:target {
+    animation: expand-from-left 0.65s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+#overlay-2:target {
+    animation: expand-from-center 0.65s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+#overlay-3:target {
+    animation: expand-from-right 0.65s cubic-bezier(0.76, 0, 0.24, 1) both;
+}
+
+.overlay-close {
+    position: absolute;
+    top: 32px;
+    right: 44px;
+    font-size: 44px;
+    color: #1a1a1a;
+    text-decoration: none;
+    line-height: 1;
+    transition: opacity 0.25s ease;
+    z-index: 2;
+}
+
+.overlay-close:hover {
+    opacity: 0.5;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 300px 1fr;
+    color: #1a1a1a;
+}
+
+.overlay-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 70px 50px;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #444;
+}
+
+.overlay-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+    padding: 40px 20px;
+}
+
+.overlay-number {
+    font-family: "Robotic";
+    font-size: 130px;
+    color: #1a1a1a;
+    line-height: 1;
+    letter-spacing: -4px;
+}
+
+.overlay-title {
+    font-size: 20px;
+    color: #1a1a1a;
+    font-weight: normal;
+}
+
+.overlay-subtitle {
+    font-size: 12px;
+    color: #777;
+}
+
+.btn-jovi {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 13px 42px;
+    border-radius: 50px;
+    font-size: 13px;
+    text-decoration: none;
+    margin-top: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-jovi:hover {
+    background-color: #3a3a3a;
+}
+
+.content-white {
+    color: var(--white);
 }
